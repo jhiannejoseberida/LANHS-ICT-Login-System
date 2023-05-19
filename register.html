@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>ICT Laboratory Registration Page</title>
+</head>
+<body>
+    <form method="post" action="register-entry.php" class="login-form">
+        <div
+            div style='text-align:center'>
+        <h>LOS AMIGOS NATIONAL HIGH SCHOOL</h>
+        <h1>Registration Page</h1>
+        <p>Register your username and password. NOTE: your username should be your full name (i.e juandelacruz)</p>
+        <div class="time" id="time-display"></div>
+        </div>
+        
+        <input type="username" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <div class="buttonDiv">
+            <button type="submit" name="submit">Register</button>
+        </div>
+        <p>   </p>
+        <div class="buttonDiv">
+            <!-- Use JavaScript to handle the navigation to home.html without submitting the form -->
+            <button type="button" onclick="location.href='admin-page.php'">Back</button>
+        </div>
+
+        <hr>
+    </form>
+    <div class="login-form-bg">
+    </div>
+</body>
+
+<script>
+    function time(){
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+
+        document.getElementById('time-display').innerHTML=`${h}:${m}:${s}`
+        setTimeout(time,1000)
+    }
+
+    time()
+</script>
+</html>

@@ -1,0 +1,19 @@
+Inventory Report
+Date and Time: 2023-04-13_19-14-04
+Item		Total	Functioning		Defective
+Monitor		1		1				1
+Mouse		1		1				1
+Keyboard	1		1				1
+Speaker		1		1				1
+HDD		1		1				2
+SSD		1		1				2
+CPU		1		2				2
+GPU		1		2				2
+RAM		1		2				1
+Motherboard	1		1				1
+PSU		1		1				1
+AVR		1		1				1
+System Unit	1		1				1
+LAN Tester	1		1				1
+RJ45		1		1				1
+Crimper		1		1				1

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>ICT Laboratory Logbook Entry</title>
+    <style>
+        /* Center the drop-down box */
+        .dropdown-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="logbook-log-entries.php" class="login-form">
+        <div style='text-align:center'>
+            <h1>LOS AMIGOS NATIONAL HIGH SCHOOL</h1>
+            <h2>Welcome to the ICT Laboratory!</h2>
+            <p>Please fill out your full name, section, and purpose.</p>
+            <div class="time" id="time-display"></div>
+        </div>
+        <p>     </p>
+        <!-- Add drop-down box with two options -->
+        <div class="dropdown-container">
+            <select name="userType" id="userType">
+                <option value="individual">Individual Student</option>
+                <option value="wholeclass">Whole Class</option>
+            </select>
+        </div>
+        <p>     </p>
+        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+        <input type="text" name="section" id="section" placeholder="Section" required>
+        <input type="text" name="purpose" id="purpose" placeholder="Purpose" required>
+
+        <div class="buttonDiv">
+            <button type="submit" name="submit">Sign in</button>
+        </div>
+        <p></p>
+        <div class="buttonDiv">
+            <button type="button" onclick="location.href='home.html'">Back</button>
+        </div>
+        <hr>
+        <input type="hidden" name="source" value="home">
+    </form>
+    <div class="login-form-bg">
+    </div>
+</body>
+
+<script>
+    function updateTime() {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+
+        document.getElementById('time-display').innerHTML = `${h}:${m}:${s}`;
+        setTimeout(updateTime, 1000);
+    }
+
+    function updatePlaceholders() {
+        var userType = document.getElementById('userType').value;
+        var fullNameInput = document.getElementById('fullname');
+        var sectionInput = document.getElementById('section');
+        var purposeInput = document.getElementById('purpose');
+
+        if (userType === 'individual') {
+            fullNameInput.placeholder = 'Full Name';
+            sectionInput.placeholder = 'Section';
+            purposeInput.placeholder = 'Purpose';
+        } else if (userType === 'wholeclass') {
+            fullNameInput.placeholder = 'Name of Teacher';
+            sectionInput.placeholder = 'Section';
+            purposeInput.placeholder = 'Subject';
+        }
+    }
+
+    document.getElementById('userType').addEventListener('change', updatePlaceholders);
+
+    updateTime();
+</script>
+</html>
